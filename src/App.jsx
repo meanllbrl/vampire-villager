@@ -6,7 +6,9 @@ import { StreamView } from './pages/StreamView.jsx';
 
 const AppContent = () => {
     const { phase } = useGame();
-    const isStreamRoute = window.location.pathname === '/stream';
+    // Check for stream mode via query parameter (works better on GitHub Pages)
+    const urlParams = new URLSearchParams(window.location.search);
+    const isStreamRoute = urlParams.get('stream') === 'true' || window.location.pathname === '/stream';
     const [viewMode, setViewMode] = React.useState(isStreamRoute ? 'stream' : 'moderator');
 
     if (phase === 'SETUP') {
@@ -45,7 +47,9 @@ const AppContent = () => {
 };
 
 function App() {
-    const isStreamRoute = window.location.pathname === '/stream';
+    // Check for stream mode via query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const isStreamRoute = urlParams.get('stream') === 'true' || window.location.pathname === '/stream';
 
     return (
         <GameProvider readOnly={isStreamRoute}>

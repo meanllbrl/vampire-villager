@@ -22,24 +22,31 @@ export const StreamView = () => {
     const votingAudio = useRef(null);
     const votingBgAudio = useRef(null); // Voting background music
 
+    // Helper to get correct asset path including base URL
+    const getAssetPath = (path) => {
+        const base = import.meta.env.BASE_URL;
+        const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+        return `${base}${cleanPath}`;
+    };
+
     // Initialize audio on mount
     useEffect(() => {
         const initAudio = (path, volume = 1.0) => {
-            const audio = new Audio(path);
+            const audio = new Audio(getAssetPath(path));
             audio.preload = 'auto';
             audio.volume = volume;
             audio.load(); // Force preload
             return audio;
         };
 
-        morningAudio.current = initAudio('/sound/chicken.mp3');
-        morningBgAudio.current = initAudio('/sound/morning_bg.mp3');
-        nightAudio.current = initAudio('/sound/night time .mp3');
-        vampireAudio.current = initAudio('/sound/vampier_time.mp3');
-        doctorAudio.current = initAudio('/sound/doctor_time.mp3');
-        sheriffAudio.current = initAudio('/sound/sheriff_time.mp3');
-        votingAudio.current = initAudio('/sound/voting starts.mp3');
-        votingBgAudio.current = initAudio('/sound/voting_bg.mp3', 0.6);
+        morningAudio.current = initAudio('sound/chicken.mp3');
+        morningBgAudio.current = initAudio('sound/morning_bg.mp3');
+        nightAudio.current = initAudio('sound/night time .mp3');
+        vampireAudio.current = initAudio('sound/vampier_time.mp3');
+        doctorAudio.current = initAudio('sound/doctor_time.mp3');
+        sheriffAudio.current = initAudio('sound/sheriff_time.mp3');
+        votingAudio.current = initAudio('sound/voting starts.mp3');
+        votingBgAudio.current = initAudio('sound/voting_bg.mp3', 0.6);
     }, []);
 
     const isNightPhase = phase.includes('NIGHT');
@@ -461,7 +468,10 @@ export const StreamView = () => {
 
                 {/* Animated Fog/Smoke Overlay */}
                 <div className="absolute inset-0 opacity-30">
-                    <div className="absolute inset-0 bg-[url('/smoke.png')] bg-cover animate-pulse-slow mix-blend-overlay" />
+                    <div
+                        className="absolute inset-0 bg-cover animate-pulse-slow mix-blend-overlay"
+                        style={{ backgroundImage: `url('${getAssetPath('smoke.png')}')` }}
+                    />
                 </div>
 
                 {/* Particles */}
