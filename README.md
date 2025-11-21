@@ -2,7 +2,7 @@
 
 A modern, feature-rich web application for hosting the classic social deduction game "Werewolf" (Vampire Villager). Built specifically for **streamers** and **online communities** with a dedicated **Moderator Dashboard** and beautiful **Stream View** for viewers.
 
-![Home Setup](public/screenshots/home_setup.png)
+![Lobby Setup](public/screenshots/01_lobby_setup.png)
 
 ## 🎯 Why This Exists
 
@@ -16,15 +16,48 @@ This project was created to solve a common problem for streamers and online comm
 
 Perfect for Discord communities, Twitch/YouTube streamers, or any group wanting to play remotely!
 
+## 📸 Visual Gameplay Guide
+
+The game is designed with a **Dual-View System**:
+- **Left Side (Stream View)**: What your viewers see. Safe, cinematic, and spoiler-free.
+- **Right Side (Moderator Dashboard)**: What you see. Full control, role info, and game management.
+
+### 1. Lobby & Setup
+Moderator adds players and configures the game balance. The stream view shows a waiting lobby.
+![Lobby Setup](public/screenshots/01_lobby_setup.png)
+
+### 2. Role Distribution
+Roles are assigned randomly. The stream view shows a dramatic "Assigning Roles" animation while the moderator sees the actual roles.
+![Role Distribution](public/screenshots/02_role_distribution.png)
+
+### 3. Night Phase 🌑
+The village sleeps. The moderator manages night actions (Vampire kills, Doctor saves, Sheriff investigations) while the stream view shows a thematic night ambience.
+![Night Phase](public/screenshots/05_night_phase.png)
+
+### 4. Morning Reveal 🌅
+The sun rises! The stream view dramatically reveals if anyone died or if the village is safe.
+![Morning Reveal](public/screenshots/06_morning_reveal.png)
+
+### 5. Day Discussion ☀️
+Players discuss who to vote out. The stream view shows a sun tracking the discussion time.
+![Day Discussion](public/screenshots/03_day_discussion.png)
+
+### 6. Voting Phase 🗳️
+Players cast their votes. The stream view updates in real-time as the moderator inputs votes.
+![Voting Phase](public/screenshots/04_voting_phase.png)
+
+### 7. Victory! 🏆
+When one team wins, a victory screen is displayed for everyone.
+![Victory Screen](public/screenshots/07_victory_screen.png)
+
 ## ✨ Key Features
 
 ### 🎮 Dual-View System
 - **Moderator Dashboard**: Private control panel to manage the entire game
   - Role assignments and tracking
   - Phase progression controls
-  - Night action management (vampire attacks, doctor saves, sheriff investigations)
+  - Night action management
   - Voting system with live tallying
-  - Role reveal toggles
 - **Stream View** (`/stream` route): Clean, public-facing display for viewers
   - Shows living players and eliminated players (graveyard)
   - Phase announcements with dramatic animations
@@ -90,42 +123,11 @@ All UI elements, role descriptions, and announcements are fully translated.
    - **Vampires Win**: Vampires ≥ Villagers
    - **Jester Wins**: Jester gets voted out during the day
 
-### For Moderators
-
-The Moderator Dashboard gives you complete control:
-
-1. **View Toggle**: Switch between Moderator and Stream View
-2. **Role Management**: Show/hide roles, track abilities
-3. **Phase Control**: Progress through nights and days
-4. **Night Actions**: 
-   - Select vampire victims
-   - Choose doctor's protection target
-   - Pick sheriff's investigation target
-   - Skip actions if role is dead or out of uses
-5. **Voting System**: 
-   - Players vote by raising hands/using chat
-   - You tally votes manually
-   - System shows vote leader and handles ties
-6. **Reset Option**: Restart the game at any time
-
-![Moderator Dashboard](public/screenshots/moderator_dashboard.png)
-
-### For Stream Viewers
-
-The Stream View (`/stream` route) provides a clean overlay:
-
-- See all living players with their status
-- View the graveyard (eliminated players)
-- Watch phase transitions and announcements
-- No spoilers—roles are never revealed until death
-
-![Stream View](public/screenshots/stream_view.png)
-
 ### Usage Patterns
 
 **Option 1: Two Browser Windows (Recommended)**
 - Window 1: Moderator Dashboard (keep private)
-- Window 2: Stream View at `/stream` (add as OBS browser source)
+- Window 2: Stream View at `/?stream=true` (add as OBS browser source)
 
 **Option 2: Single View with Toggle**
 - Use the Moderator/Stream View toggle button
