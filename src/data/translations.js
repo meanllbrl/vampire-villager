@@ -1,0 +1,238 @@
+export const TRANSLATIONS = {
+    TR: {
+        // Phases
+        SETUP: "Kurulum",
+        DISTRIBUTING_ROLES: "Roller Dağıtılıyor",
+        MORNING_ANNOUNCEMENT: "Sabah Duyurusu",
+        NIGHT: "Gece",
+        NIGHT_VAMPIRE: "Vampir Saldırısı",
+        NIGHT_DOCTOR: "Doktor Koruması",
+        NIGHT_SHERIFF: "Şerif Sorgusu",
+        DAY_DISCUSSION: "Tartışma",
+        VOTING: "Oylama",
+        DEFENSE: "Savunma",
+        GAME_OVER: "Oyun Bitti",
+
+        // Roles
+        VILLAGER: "Köylü",
+        VAMPIRE: "Vampir",
+        DOCTOR: "Doktor",
+        SHERIFF: "Şerif",
+        JESTER: "Soytarı",
+
+        // UI
+        turn: "Tur",
+        survivors: "Hayatta Kalanlar",
+        fallen: "Ölüler",
+        showRoles: "Rolleri Göster",
+        hideRoles: "Rolleri Gizle",
+        reset: "Sıfırla",
+        resetConfirm: "Oyunu sıfırlamak istediğinize emin misiniz? Bu işlem geri alınamaz.",
+        startVoting: "Oylamayı Başlat",
+        languageDesc: 'Oyun dilini değiştir',
+        discussionDuration: 'Tartışma Süresi',
+        discussionDurationDesc: 'Gündüz tartışma süresi (dakika)',
+        startGame: 'Oyunu Başlat',
+        cancel: "İptal",
+        
+        // Events
+        gameStarted: "Oyun başladı! Roller dağıtıldı.",
+        nightQuiet: "Gece sessiz geçti. Kimse saldırıya uğramadı.",
+        killedByVampire: "{name} gece vampirler tarafından öldürüldü.",
+        savedByDoctor: "Doktor birini vampir saldırısından kurtardı!",
+        eliminatedByVote: "{name} oylama sonucu elendi.",
+        jesterWin: "Soytarı kazandı! Köylüleri kandırıp kendini astırdı.",
+        villagersWin: "Köylüler kazandı! Tüm vampirler elendi.",
+        vampiresWin: "Vampirler kazandı! Köyü ele geçirdiler.",
+        
+        // Voting
+        ballotBox: "Sandık",
+        voteFor: "Oy Ver",
+        resetVotes: "Oyları Sıfırla",
+        openStream: "Yayın Ekranını Aç",
+        tie: "Eşitlik: {players}",
+        eliminate: "Oyuncuyu Eleye",
+        waitingForVotes: "Oyların verilmesi bekleniyor...",
+        
+        // Night Results
+        nightQuietTitle: "Sakin Bir Gece",
+        nightQuietDesc: "Güneş huzurlu bir köyün üzerinde doğuyor. Dün gece kimse ölmedi.",
+        brutalAttack: "Vahşi Saldırı",
+        morningTragedy: "Sabahın erken saatlerinde...",
+        hasDied: "ÖLDÜ",
+        
+        // Config
+        gameConfig: "Oyun Ayarları",
+        vampires: "Vampirler",
+        balanceScore: "Denge Puanı",
+        balanced: "Dengeli",
+        villagerFavored: "Köylü Avantajlı",
+        vampireFavored: "Vampir Avantajlı",
+        
+        // Moderator
+        dayPhase: "Gündüz Fazı",
+        allowDiscussion: "Oyuncuların tartışmasına izin verin. Oy vermeye hazır olduklarında, bir sonraki faza geçin.",
+        startNight: "Geceyi Başlat",
+        startDiscussion: "Tartışmayı Başlat",
+        startVoting: "Oylamayı Başlat",
+        selectVictim: "Kurbanı Seç",
+        selectProtected: "Korunacak Kişiyi Seç",
+        selectSuspect: "Şüpheliyi Seç",
+        confirmVictim: "Kurbanı onayla",
+        confirmProtection: "Korumayı onayla",
+        confirmSuspect: "Şüpheliyi onayla",
+        confirmNextPhase: "Onayla & Sonraki Faz",
+        noVictimSelected: "Kurban seçilmedi - Vampirler bu gece blöf yapacak",
+        skipNoKill: "Atla / Öldürme (Blöf)",
+        skipAction: "Atla / İşlem Yok (Blöf)",
+        waitingForAllVotes: "Herkesin oy vermesi bekleniyor...",
+        startNightActions: "Gece Aksiyonlarını Başlat",
+        waitingNightActions: "Gece aksiyonlarının başlaması bekleniyor...",
+        investigationResult: "Sonuç",
+        roleCannotAct: "Rol İşlem Yapamaz (Ölü veya Hakkı Bitti)",
+        actionsLeft: "Kalan Hak: {count}",
+        
+        // Setup
+        gameSetup: "OYUN KURULUMU",
+        addPlayersDesc: "Yayını başlatmak için oyuncuları ekleyin",
+        enterPlayerName: "Oyuncu adı girin...",
+        add: "Ekle",
+        playersList: "Oyuncular ({count})",
+        minPlayers: "Min 4 oyuncu gerekli",
+        roleGuide: "Rol Rehberi",
+        hide: "Gizle",
+        startBroadcast: "YAYINI BAŞLAT",
+        perfectlyBalanced: "Mükemmel Dengeli",
+        
+        // Role Descriptions
+        descVillager: "Masum bir köylü. Amacın hayatta kalmak ve vampirleri oylayarak elemek.",
+        descVampire: "Gecenin yaratığı. Geceleri köylüleri öldür ve gündüzleri onları kandır.",
+        descDoctor: "Her gece bir kişiyi vampir saldırısından koruyabilir. Kendini de koruyabilir.",
+        descSheriff: "Her gece bir kişiyi sorgulayarak gerçek kimliğini öğrenebilir.",
+        descJester: "Kaotik tarafsız. TEK amacın gündüz oylamasında köy tarafından asılmak.",
+        
+        // Morning Announcement
+        morningAnnouncement: "Sabah Duyurusu",
+        morningAttack: "Sabah saatlerinde bir saldırı sonucunda...",
+        victimDied: "{name} hain bir saldırı ile hayatını kaybetti.",
+        noDeath: "Neyse ki bu gece kimse ölmedi.",
+        nightQuiet: "Bu gece sessizlik hakimdi. Kimse ölmedi.",
+
+        actionLimit: "Hak",
+    },
+    EN: {
+        // Phases
+        SETUP: "Setup",
+        DISTRIBUTING_ROLES: "Distributing Roles",
+        MORNING_ANNOUNCEMENT: "Morning Announcement",
+        NIGHT: "Night",
+        NIGHT_VAMPIRE: "Vampire Attack",
+        NIGHT_DOCTOR: "Doctor Protection",
+        NIGHT_SHERIFF: "Sheriff Investigation",
+        DAY_DISCUSSION: "Discussion",
+        VOTING: "Voting",
+        DEFENSE: "Defense",
+        GAME_OVER: "Game Over",
+
+        // Roles
+        VILLAGER: "Villager",
+        VAMPIRE: "Vampire",
+        DOCTOR: "Doctor",
+        SHERIFF: "Sheriff",
+        JESTER: "Jester",
+
+        // UI
+        turn: "Turn",
+        survivors: "Survivors",
+        fallen: "Fallen",
+        showRoles: "Show Roles",
+        hideRoles: "Hide Roles",
+        reset: "Reset",
+        resetConfirm: "Are you sure you want to reset the game? This cannot be undone.",
+        startVoting: "Start Voting",
+        endNight: "End Night",
+        confirm: "Confirm",
+        cancel: "Cancel",
+
+        // Events
+        gameStarted: "Game started! Roles have been distributed.",
+        nightQuiet: "Tonight, silence reigned. No one died.",
+        morningAnnouncement: "Morning Announcement",
+        morningAttack: "In the early hours of the morning, after a brutal attack...",
+        victimDied: "{name} lost their life in a treacherous attack.",
+        noDeath: "Fortunately, no one died last night.",
+        killedByVampire: "{name} was killed by vampires during the night.",
+        savedByDoctor: "The doctor saved someone from a vampire attack!",
+        eliminatedByVote: "{name} was eliminated by vote.",
+        jesterWin: "Jester wins! They were voted out by the village.",
+        villagersWin: "Villagers win! All vampires have been eliminated.",
+        vampiresWin: "Vampires win! They have overtaken the village.",
+
+        // Voting
+        ballotBox: "Ballot Box",
+        voteFor: "Vote For",
+        resetVotes: "Reset Votes",
+        openStream: "Open Stream View",
+        tie: "Tie between: {players}",
+        eliminate: "Eliminate Player",
+        waitingForVotes: "Waiting for votes...",
+
+        // Night Results
+        nightQuietTitle: "A Quiet Night",
+        nightQuietDesc: "The sun rises over a peaceful village. No one died last night.",
+        brutalAttack: "Brutal Attack",
+        morningTragedy: "In the early hours of the morning...",
+        hasDied: "HAS DIED",
+
+        // Config
+        gameConfig: "Game Configuration",
+        vampires: "Vampires",
+        balanceScore: "Balance Score",
+        balanced: "Balanced",
+        villagerFavored: "Villager Favored",
+        vampireFavored: "Vampire Favored",
+        
+        // Moderator
+        dayPhase: "Day Phase",
+        allowDiscussion: "Allow the players to discuss. When they are ready to vote, proceed to the next phase.",
+        startNight: "Start Night",
+        startDiscussion: "Start Discussion",
+        startVoting: "Start Voting",
+        selectVictim: "Select Victim",
+        selectProtected: "Select Protected",
+        selectSuspect: "Select Suspect",
+        confirmVictim: "Confirm victim",
+        confirmProtection: "Confirm protection for",
+        confirmSuspect: "Confirm suspect",
+        confirmNextPhase: "Confirm & Next Phase",
+        noVictimSelected: "No victim selected - Vampires will Bluff tonight",
+        skipNoKill: "Skip / No Kill (Bluff)",
+        skipAction: "Skip / No Action (Bluff)",
+        waitingForAllVotes: "Waiting for everyone to vote...",
+        startNightActions: "Start Night Actions",
+        waitingNightActions: "Waiting for night actions to begin...",
+        investigationResult: "Result",
+        roleCannotAct: "Role Cannot Act (Dead or No Actions)",
+        actionsLeft: "Actions Left: {count}",
+        
+        // Setup
+        gameSetup: "GAME SETUP",
+        addPlayersDesc: "Add players to begin the broadcast",
+        enterPlayerName: "Enter player name...",
+        add: "Add",
+        playersList: "Players ({count})",
+        minPlayers: "Min 4 players required",
+        roleGuide: "Role Guide",
+        hide: "Hide",
+        startBroadcast: "START BROADCAST",
+        perfectlyBalanced: "Perfectly Balanced",
+
+        // Role Descriptions
+        descVillager: "An innocent villager. Your goal is to survive and vote out the vampires.",
+        descVampire: "A creature of the night. Kill villagers at night and deceive them during the day.",
+        descDoctor: "Can save one person each night from a vampire attack. Can save themselves.",
+        descSheriff: "Can investigate one person each night to reveal their true identity.",
+        descJester: "A chaotic neutral. Your ONLY goal is to get voted out by the village during the day.",
+        actionLimit: "Uses",
+    }
+};
